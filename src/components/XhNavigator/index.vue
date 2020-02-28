@@ -63,10 +63,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$my-blue: #5a7df3;
-$border-grey: #ededed;
-$font-grey: #bfbfbf;
-$border-width: 2px;
+
 .navbox {
   width: 100%;
   height: 100%;
@@ -133,7 +130,7 @@ nav {
     width: 80%;
     height: 80%;
     border-radius: 10px;
-    background: #f3f3f3;
+    background: $back-grey;
     padding: 20% 15% 15% 15%;
     position: relative;
     > img {
