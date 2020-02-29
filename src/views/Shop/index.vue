@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="view-shop">
     <div class="nav">
       <xh-navigator :current="current"></xh-navigator>
     </div>
@@ -20,7 +20,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main {
+.view-shop {
   width: 100%;
   height: 100%;
   display: flex;

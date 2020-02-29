@@ -1,5 +1,5 @@
 <template>
-  <div class="navbox">
+  <div class="xh-navigator">
     <div class="title">
       <div>XH</div>
       <strong>XhERP</strong>
@@ -11,6 +11,7 @@
         :key="item"
         :to="'/' + item"
         :class="{ current: index == current }"
+        pointer
       >
         <img
           :src="
@@ -26,13 +27,13 @@
     </nav>
     <div class="tip">
       <div>
-        <img src="/images/nav-tip.png" />
         <div class="tip-content">
+        <img src="/images/nav-tip.png" />
           Upgrade to
           <strong>PRO</strong>
           for more resources
         </div>
-        <div class="tip-btn">Upgrade</div>
+        <button class="tip-btn">Upgrade</button>
       </div>
     </div>
   </div>
@@ -64,14 +65,13 @@ export default {
 
 <style lang="scss" scoped>
 
-.navbox {
+.xh-navigator {
   width: 100%;
   height: 100%;
   box-shadow: 0 0 $border-width $border-width $border-grey;
-  padding-top: 10%;
+  padding-top: 5vh;
 }
 .title {
-  height: 10%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -98,7 +98,6 @@ nav {
     align-items: center;
     padding: 0 18%;
     margin-bottom: 2rem;
-    cursor: pointer;
     font-weight: bolder;
     font-size: 0.8rem;
     > img {
@@ -131,23 +130,26 @@ nav {
     height: 80%;
     border-radius: 10px;
     background: $back-grey;
-    padding: 20% 15% 15% 15%;
-    position: relative;
-    > img {
-      width: 4rem;
-      height: 4rem;
-      position: absolute;
-      top: -20%;
-      left: 50%;
-      transform: translate(-50%, 0);
-    }
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     > .tip-content {
       color: $font-grey;
       font-size: 0.8rem;
       text-align: center;
       margin-bottom: 2rem;
+      position: relative;
       > strong {
         color: black;
+      }
+      > img {
+        width: 4rem;
+        height: 4rem;
+        position: absolute;
+        top: -4.5rem;
+        left: 50%;
+        transform: translate(-50%, 0);
       }
     }
     > .tip-btn {
@@ -156,6 +158,8 @@ nav {
       background: $my-blue;
       text-align: center;
       padding: 0.5rem 0;
+      border: none;
+      outline: none;
     }
   }
 }

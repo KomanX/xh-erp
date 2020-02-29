@@ -1,13 +1,14 @@
 <template>
-  <div>{{ date }}</div>
+  <div>{{ newDate }}</div>
 </template>
 
 <script>
 export default {
   name: 'DateBox',
+  props: ['date'],
   data() {
     return {
-      date: ''
+      newDate: ''
     };
   },
   mounted() {
@@ -34,10 +35,10 @@ export default {
       'Nov',
       'Dec'
     ];
-    let d = new Date();
-    this.date = `${d.getDay()} ${
+    let d = this.date ? new Date(this.date) : new Date();
+    this.newDate = `${d.getDate()} ${
       months[d.getMonth()]
-    } ${d.getYear()},${days[d.getDay()]}`;
+    } ${d.getFullYear()},${days[d.getDay()]}`;
   }
 };
 </script>
