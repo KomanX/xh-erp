@@ -6,7 +6,7 @@ Vue2+Vue CLI3+scss+elementUI+Express+mongoDB
 
 部分效果图：
 
-![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/home.png)
+![image](https://github.com/KomanX/xh-erp/blob/master/readme-images/home.png)
 
 ## 自己设计的UI组件
 
