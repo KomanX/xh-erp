@@ -6,7 +6,7 @@ Vue2+Vue CLI3+scss+elementUI+Express+mongoDB
 
 部分效果图：
 
-![image](https://github.com/KomanX/xh-erp/readme-images/home.png)
+![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/home.png)
 
 ## 自己设计的UI组件
 
@@ -99,7 +99,7 @@ height: 100%
 
 效果图：
 
- ![image](https://github.com/KomanX/xh-erp/readme-images/color-cards.png)
+ ![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/color-cards.png)
 
 ### progress-bar - 多种进度条样式
 
@@ -141,13 +141,13 @@ props: {
 
 效果图：
 
-![image](https://github.com/KomanX/xh-erp/readme-images/progress-bar-1.png)
+![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/progress-bar-1.png)
 
-![image](https://github.com/KomanX/xh-erp/readme-images/progress-bar-2.png)
+![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/progress-bar-2.png)
 
-![image](https://github.com/KomanX/xh-erp/readme-images/progress-bar-3.png)
+![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/progress-bar-3.png)
 
-![image](https://github.com/KomanX/xh-erp/readme-images/progress-bar-4.png)
+![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/progress-bar-4.png)
 
 ### xh-chart - 多种统计图样式
 
@@ -184,7 +184,7 @@ props: {
 
 效果图：
 
-![image](https://github.com/KomanX/xh-erp/readme-images/xh-chart-row.png)
+![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/xh-chart-row.png)
 
 当内容过多时，超出部分会被隐藏，可以通过滚动显示。
 
@@ -203,7 +203,7 @@ props: {
 
 效果图：
 
-![image](https://github.com/KomanX/xh-erp/readme-images/xh-chart-row-img.png)
+![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/xh-chart-row-img.png)
 
 #### schedule - 日程表
 
@@ -218,7 +218,7 @@ props: {
 
 效果图：
 
-![image](https://github.com/KomanX/xh-erp/readme-images/xh-chart-schedule.png)
+![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/xh-chart-schedule.png)
 
 ### msg-icon - 图标圆角矩形
 
@@ -249,8 +249,8 @@ props: {
 
 效果图：
 
-![image](https://github.com/KomanX/xh-erp/readme-images/msg-icon-message.png)
+![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/msg-icon-message.png)
 
-![image](https://github.com/KomanX/xh-erp/readme-images/msg-icon-msg.png)
+![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/msg-icon-msg.png)
 
-![image](https://github.com/KomanX/xh-erp/readme-images/msg-icon-todo.png)
+![image](https://github.com/KomanX/xh-erp/tree/master/readme-images/msg-icon-todo.png)
