@@ -28,7 +28,7 @@ export default {
               'border-radius': '10px',
               'margin-right':
                 index == slots_d.length - 1 ? '' : '1rem',
-              flex: 1,
+              flex: 'auto',
               height: '100%'
             }
           },

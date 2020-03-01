@@ -34,9 +34,9 @@ export default {
       console.log('start search!');
     },
     btnClick() {
-      this.isShowInput
-        ? this.search()
-        : this.notIsShowInput();
+      // this.isShowInput
+      //   ? this.search()
+      //   : this.notIsShowInput();
     },
   },
   directives: {

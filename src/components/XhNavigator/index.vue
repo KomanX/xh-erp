@@ -13,15 +13,17 @@
         :class="{ current: index == current }"
         pointer
       >
-        <img
-          :src="
-            '/images/' +
-              item +
-              (index == current ? '_a' : '_u') +
-              '.png'
-          "
-          :alt="item"
-        />
+        <div>
+          <img
+            :src="
+              '/images/' +
+                item +
+                (index == current ? '_a' : '_u') +
+                '.png'
+            "
+            :alt="item"
+          />
+        </div>
         {{ item[0].toUpperCase() + item.slice(1) }}
       </router-link>
     </nav>
@@ -68,16 +70,19 @@ export default {
 .xh-navigator {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   box-shadow: 0 0 $border-width $border-width $border-grey;
-  padding-top: 5vh;
+  padding: 5vh 0;
 }
 .title {
   width: 100%;
+  height: 5%;
   display: flex;
   align-items: center;
   padding: 0 18%;
   font-size: 1.2rem;
-  margin-bottom: 24%;
   > div:first-child {
     border-radius: 3px;
     background: $my-blue;
@@ -85,25 +90,35 @@ export default {
     width: 1.75rem;
     line-height: 1.75rem;
     text-align: center;
-    margin-right: 3rem;
+    margin-right: 2rem;
   }
 }
 
 nav {
   list-style: none;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
   > li {
+    flex: auto;
     color: $font-grey;
     width: 100%;
     display: flex;
     align-items: center;
     padding: 0 18%;
-    margin-bottom: 2rem;
     font-weight: bolder;
     font-size: 0.8rem;
-    > img {
-      width: 1.44rem;
-      height: 1.44rem;
-      margin-right: 3rem;
+    >div{
+      height: 1.75rem;
+      width:1.75rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+        margin-right: 2.5rem;
+      > img {
+        width: 1.44rem;
+        height: 1.44rem;
+      }
     }
   }
   > li.current {
@@ -130,7 +145,7 @@ nav {
     height: 80%;
     border-radius: 10px;
     background: $back-grey;
-    padding: 0 2rem;
+    padding: 0 1.2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -138,8 +153,8 @@ nav {
       color: $font-grey;
       font-size: 0.8rem;
       text-align: center;
-      margin-bottom: 2rem;
       position: relative;
+      margin-bottom: 1rem;
       > strong {
         color: black;
       }
@@ -147,7 +162,7 @@ nav {
         width: 4rem;
         height: 4rem;
         position: absolute;
-        top: -4.5rem;
+        top: -4rem;
         left: 50%;
         transform: translate(-50%, 0);
       }
@@ -157,7 +172,7 @@ nav {
       border-radius: 15px;
       background: $my-blue;
       text-align: center;
-      padding: 0.5rem 0;
+      padding: 0.4rem 0;
       border: none;
       outline: none;
     }

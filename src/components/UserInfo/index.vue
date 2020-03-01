@@ -16,28 +16,10 @@
       <span>{{ user.pro }}</span>
     </div>
     <div class="progress">
-      <ul>
-        <li
-          v-for="(item, index) in projects"
-          :key="index"
-          pointer
-        >
-          <msg-icon
-            class="msg-icon"
-            :message="item.level"
-          ></msg-icon>
-          <div>
-            <strong>{{ item.name }}</strong>
-            <span>{{ item.des }}</span>
-          </div>
-          <div>
-            <progress-bar
-              :rate="item.rate"
-              class="progress-bar"
-            ></progress-bar>
-          </div>
-        </li>
-      </ul>
+      <xh-chart
+        :xh-data="projects"
+        :type="'row-img'"
+      ></xh-chart>
     </div>
     <div class="reminders">
       <title-l-r class="title">
@@ -63,7 +45,7 @@
               :type="item.type"
             ></msg-icon>
             <div>
-              {{ item.title }}
+              <strong overtext-s>{{ item.title }}</strong>
               <date-box
                 class="date-box"
                 :date="item.time"
@@ -80,7 +62,7 @@
 <script>
 import TitleLR from '@/components/TitleLR';
 import MsgIcon from '@/components/MsgIcon';
-import ProgressBar from '@/components/ProgressBar';
+import XhChart from '@/components/XhChart';
 import DateBox from '@/components/DateBox';
 
 export default {
@@ -114,7 +96,7 @@ export default {
         },
         {
           type: 'msg',
-          title: 'hard work',
+          title: 'hard work!hard work!hard work!hard work!',
           time: '2020-2-27'
         },
         {
@@ -140,7 +122,7 @@ export default {
       ]
     };
   },
-  components: { TitleLR, MsgIcon, DateBox, ProgressBar }
+  components: { TitleLR, MsgIcon, DateBox, XhChart }
 };
 </script>
 
@@ -186,41 +168,7 @@ export default {
 .progress {
   flex: none;
   margin-top: 2rem;
-  > ul {
-    list-style: none;
-    > li {
-      display: flex;
-      justify-content: flex-start;
-      margin-bottom: 1rem;
-      > div:nth-child(1) {
-        width: 2.5rem;
-        height: 2.5rem;
-        flex: none;
-        font-size: 0.9rem;
-        margin-right: 1rem;
-      }
-      > div:nth-child(2) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        font-size: 0.9rem;
-        > span {
-          font-size: 0.7rem;
-          color: $font-grey;
-        }
-      }
-      > div:nth-child(3) {
-        flex: auto;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        > .progress-bar {
-          width: 4rem;
-          height: 5px;
-        }
-      }
-    }
-  }
+  
 }
 .reminders {
   flex: auto;
@@ -286,7 +234,6 @@ export default {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          font-weight: bolder;
           > .date-box {
             font-size: 0.8rem;
             color: $font-grey;

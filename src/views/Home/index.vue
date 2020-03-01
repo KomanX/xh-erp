@@ -19,12 +19,7 @@
         <div class="hello">
           <div>
             <h3>Welcome back {{ user.name }}!</h3>
-            <p
-              v-for="(item, index) in helloMsg"
-              :key="index"
-            >
-              {{ item }}
-            </p>
+            <p>{{ helloMsg[Math.floor(Math.random(1)*helloMsg.length)] }}</p>
           </div>
           <img src="/images/hello.png" />
         </div>
@@ -38,7 +33,12 @@
                 <div pointer>More →</div>
               </template>
             </title-l-r>
-            <div></div>
+            <xh-chart
+              class="xh-chart"
+              :xh-data="chartList[0].xhData"
+              :type="chartList[0].type"
+              :prog-bar-args="{ 'err-rate': 0.4 }"
+            ></xh-chart>
           </div>
           <div>
             <title-l-r class="title">
@@ -49,7 +49,12 @@
                 <div pointer>More →</div>
               </template>
             </title-l-r>
-            <div></div>
+            <xh-chart
+              class="xh-chart"
+              :xh-data="chartList[1].xhData"
+              :type="chartList[1].type"
+              :prog-bar-args="{ 'err-rate': 0.4 }"
+            ></xh-chart>
           </div>
         </div>
         <div class="team">
@@ -89,6 +94,7 @@ import UserInfo from '@/components/UserInfo';
 import DateBox from '@/components/DateBox';
 import SearchBox from '@/components/SearchBox';
 import TitleLR from '@/components/TitleLR';
+import XhChart from '@/components/XhChart';
 import ColorCards from '@/components/ColorCards';
 
 export default {
@@ -118,6 +124,89 @@ export default {
       helloMsg: [
         'You never know how strong you really are until being strong is the only choice you have!',
         'You cannot change what you refuse to confront!'
+      ],
+      chartList: [
+        {
+          type: 'row',
+          xhData: [
+            {
+              img: '',
+              name: 'Task1',
+              des: 'it is Task1',
+              rate: '0.8'
+            },
+            {
+              img: '',
+              name: 'Task2',
+              des: 'it is Task2',
+              rate: '0.3'
+            },
+            {
+              img: '',
+              name: 'Task3',
+              des: 'it is Task3',
+              rate: '0.6'
+            },
+            {
+              img: '',
+              name: 'Task4',
+              des: 'it is Task4',
+              rate: '0.1'
+            },
+            {
+              img: '',
+              name: 'Task5',
+              des: 'it is Task5',
+              rate: '0.9'
+            }
+          ]
+        },
+        {
+          type: 'schedule',
+          xhData: [
+            {
+              name: [
+                'writing',
+                'programmer',
+                'summarizing'
+              ],
+              rate: [2, 6, 2]
+            },
+            {
+              name: [
+                'learning',
+                'writing',
+                'programmer',
+                'summarizing'
+              ],
+              rate: [2, 1, 6, 1]
+            },
+            {
+              name: ['learning', 'summarizing'],
+              rate: [7, 3]
+            },
+            {
+              name: ['learning', 'writing', 'summarizing'],
+              rate: [4, 4, 2]
+            },
+            {
+              name: ['learning', 'writing', 'programmer'],
+              rate: [3, 6, 1]
+            },
+            {
+              name: ['programmer', 'summarizing'],
+              rate: [8, 2]
+            },
+            {
+              name: [
+                'learning',
+                'programmer',
+                'summarizing'
+              ],
+              rate: [7, 2, 1]
+            }
+          ]
+        }
       ]
     };
   },
@@ -128,7 +217,8 @@ export default {
     SearchBox,
     TitleLR,
     ColorCards,
-    UserInfo
+    UserInfo,
+    XhChart
   }
 };
 </script>
@@ -139,27 +229,27 @@ $module-mt: 1rem;
   width: 100%;
   height: 100%;
   display: flex;
-
   > .nav {
-    width: 16%;
+    flex: 0 0 200px;
     height: 100%;
   }
   > .content {
-    width: 84%;
+    flex: 1 0 740px;
     height: 100%;
     display: flex;
   }
 }
 .msg {
   height: 100%;
-  flex: 1;
+  flex: 2 1 auto;
   background-color: $back-grey;
-  padding: 5vh 5% 0 5%;
+  padding: 5vh 5% 5vh 5%;
+  overflow: hidden;
 }
 
 .user {
   height: 100%;
-  width: 350px;
+  flex: 0 0 300px;
 }
 .search {
   display: flex;
@@ -188,7 +278,7 @@ $module-mt: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     > h3 {
       color: #ff616f;
       margin-bottom: 1rem;
@@ -211,11 +301,20 @@ $module-mt: 1rem;
   margin-top: $module-mt;
   > div {
     height: 100%;
+    overflow: hidden;
     border-radius: 10px;
-    padding: 1.2rem 1.1rem;
+    padding: 1.2rem 1.2rem;
     background-color: white;
+    display: flex;
+    flex-direction: column;
     > .title {
       font-size: 0.8rem;
+      margin-bottom: 1rem;
+      flex: none;
+    }
+    > .xh-chart {
+      flex: auto;
+      overflow: hidden;
     }
   }
   > div:first-child {
@@ -234,21 +333,22 @@ $module-mt: 1rem;
     margin-top: $module-mt;
     > div > div {
       height: 100%;
-      padding: 1rem;
+      padding: 0.9rem;
       display: flex;
+      align-items: center;
       > div {
-        margin-left: 1.5rem;
+        margin-left: 0.5rem;
         color: white;
       }
       > img {
-        height: 100%;
+        height: 80%;
         object-fit: contain;
       }
       > div:nth-of-type(1) {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        flex: 1;
+        flex: auto;
         > span {
           font-size: 0.8rem;
           color: $font-grey;
