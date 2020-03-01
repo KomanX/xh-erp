@@ -32,7 +32,7 @@ Vue2+Vue CLI3+scss+elementUI+Express+mongoDB
         	<img :src="item.img" />
         	<div>
         		<span>{{ item.pro }}</span>
-        			{{ item.name }}
+        		{{ item.name }}
         	</div>
         	<div>→</div>
         </div>
@@ -246,6 +246,8 @@ props: {
 ```
 
 所以只需要在public\images目录中添加名为msg-icon-*的png图片，就可以根据你的自定义名调用相应的图标圆角矩形。
+
+**图标圆角矩形没有默认宽高，需要外部设置！**
 
 效果图：
 
