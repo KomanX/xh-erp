@@ -29,12 +29,12 @@ let defaultErrColor = '#FF616F';
 export default {
   name: 'ProgressBar',
   props: {
-    rate: [Number, String, Array],
-    percentage: {
+    'rate': [Number, String, Array],
+    'percentage': {
       type: Boolean,
       default: false
     },
-    col: {
+    'col': {
       type: Boolean,
       default: false
     },

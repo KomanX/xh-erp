@@ -81,7 +81,14 @@ let count = 0;
 
 export default {
   name: 'XhChart',
-  props: ['xh-data', 'type'],
+  props: {
+    'xh-data': {
+      type: Array
+    },
+    type: {
+      type: String
+    }
+  },
   data() {
     return {
       colors: [
@@ -158,7 +165,7 @@ ul {
       padding: 0.9rem 0;
       border-bottom: 1px solid #e6e6e6;
       > div:first-child {
-        flex:none;
+        flex: none;
         font-size: 0.7rem;
         font-weight: bolder;
         margin-right: 1.5rem;
@@ -167,10 +174,10 @@ ul {
         }
       }
       > div:last-child {
-        flex:auto;
+        flex: auto;
         display: flex;
         .progress-bar {
-          flex:auto;
+          flex: auto;
           height: 5px;
         }
       }

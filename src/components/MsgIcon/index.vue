@@ -1,16 +1,23 @@
 <template>
   <div class="msg-icon">
+    <strong v-if="message">{{ message }}</strong>
     <img
-      v-if="type"
+      v-else-if="type"
       :src="'/images/msg-icon-' + type + '.png'"
     />
-    <strong v-else-if="message">{{ message }}</strong>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['type', 'message']
+  props: {
+    type: {
+      type: String
+    },
+    message: {
+      type: String
+    }
+  }
 };
 </script>
 
@@ -25,7 +32,7 @@ export default {
     width: 50%;
     height: 50%;
   }
-  >strong{
+  > strong {
     width: 50%;
     line-height: 50%;
     text-align: center;

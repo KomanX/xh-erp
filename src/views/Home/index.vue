@@ -19,7 +19,15 @@
         <div class="hello">
           <div>
             <h3>Welcome back {{ user.name }}!</h3>
-            <p>{{ helloMsg[Math.floor(Math.random(1)*helloMsg.length)] }}</p>
+            <p>
+              {{
+                helloMsg[
+                  Math.floor(
+                    Math.random(1) * helloMsg.length
+                  )
+                ]
+              }}
+            </p>
           </div>
           <img src="/images/hello.png" />
         </div>
@@ -130,31 +138,26 @@ export default {
           type: 'row',
           xhData: [
             {
-              img: '',
               name: 'Task1',
               des: 'it is Task1',
               rate: '0.8'
             },
             {
-              img: '',
               name: 'Task2',
               des: 'it is Task2',
               rate: '0.3'
             },
             {
-              img: '',
               name: 'Task3',
               des: 'it is Task3',
               rate: '0.6'
             },
             {
-              img: '',
               name: 'Task4',
               des: 'it is Task4',
               rate: '0.1'
             },
             {
-              img: '',
               name: 'Task5',
               des: 'it is Task5',
               rate: '0.9'
@@ -331,7 +334,7 @@ $module-mt: 1rem;
     width: 100%;
     height: 6rem;
     margin-top: $module-mt;
-    > div > div {
+    > div {
       height: 100%;
       padding: 0.9rem;
       display: flex;

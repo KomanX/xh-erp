@@ -14,28 +14,19 @@ export default {
       ]
     };
   },
-  methods: {},
   render(h) {
-    let slotList = [];
-    let slots_d = this.$slots.default;
-    slots_d.forEach((item, index) => {
-      slotList.push(
-        h(
-          'div',
+    let slotList = this.$slots.default.map(
+      (item, index) => {
+        item.data.style = Object.assign(
           {
-            style: {
-              'background-color': this.colors[index],
-              'border-radius': '10px',
-              'margin-right':
-                index == slots_d.length - 1 ? '' : '1rem',
-              flex: 'auto',
-              height: '100%'
-            }
+            'background-color': this.colors[index]
           },
-          [item]
-        )
-      );
-    });
+          item.data.style
+        );
+        item.data.staticClass = `color-card ${item.data.staticClass}`;
+        return item;
+      }
+    );
     return h(
       'div',
       {
@@ -49,3 +40,11 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.color-card {
+  border-radius: 10px;
+  margin-right: 1rem;
+  flex: auto;
+  height: 100%;
+}
+</style>
