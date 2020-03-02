@@ -8,7 +8,7 @@ Vue2+Vue CLI3+scss+elementUI+Express+mongoDB
 
 ![image](https://github.com/KomanX/xh-erp/blob/master/readme-images/home.png)
 
-## 自己设计的UI组件
+## 自己开发的UI组件
 
 组件相关文件都在src\components\目录下。
 
